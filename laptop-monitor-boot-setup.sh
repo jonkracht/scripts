@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script to properly configure second monitor if present on boot
 
 n_monitors=$(xrandr | grep -w "connected" | wc -l)
 
