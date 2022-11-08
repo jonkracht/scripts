@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-
+# Standardize dmenu styling with global environment variable $dmenu_flags
 action=$(dmenu $dmenu_flags -p "Power options: "<< EOM
 lockscreen
 reboot
@@ -22,6 +21,5 @@ then
     exec shutdown -r now
 elif [[ "$action" = "lockscreen" ]]
 then 
-    exec $LockScreenCmd
-
+    exec $lockScreenCmd
 fi
