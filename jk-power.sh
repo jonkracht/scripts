@@ -4,6 +4,7 @@
 action=$(dmenu $dmenu_flags -p "Power options: "<< EOM
 lockscreen
 reboot
+screensaver
 shutdown
 suspend
 EOM
@@ -22,4 +23,7 @@ then
 elif [[ "$action" = "lockscreen" ]]
 then 
     exec $lockScreenCmd
+elif [[ "$action" = "screensaver" ]]
+then 
+    exec xscreensaver-command --activate
 fi
