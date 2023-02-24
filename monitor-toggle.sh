@@ -3,13 +3,11 @@
 primary=eDP-1
 secondary=HDMI-1
 
-n_monitors=$(xrandr | grep -w "connected" | wc -l)
+is_on="`xrandr | grep -A 1 $secondary | tail -1 | sed 's/[^\*]//g';`";
 
-
-if [[ "$n_monitors" = 2 ]]
+if [ "$is_on" ]
 then
-    exec xrandr --output $secondary --off
-elif [[ "$n_monitors" = 1 ]]
-then
-    exec xrandr --output $secondary --left-of $primary --auto
+    xrandr --output $secondary --off
+else
+    xrandr --output $secondary --auto --left-of $primary 
 fi
