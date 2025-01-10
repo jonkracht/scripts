@@ -4,7 +4,7 @@
 notebookName="jk-janney-portfolio"
 
 # Run notebook
-jupyter-nbconvert --to notebook --execute --inplace "${notebookName}.ipynb"
+jupyter-nbconvert --to notebook --execute --inplace "${notebookName}.ipynb" --Execute.Preprocessor.kernel_name=finance-env
 
 currentDate=`date +"%Y-%m-%d"`
 
