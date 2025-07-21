@@ -4,6 +4,7 @@ primary=eDP-1
 secondary=HDMI-1
 
 #action=$(dmenu -i -fn 'JetBrainsMono Nerd Font' -p "Action: "<< EOM
+
 action=$(dmenu $dmenu_flags -p "Action: "<< EOM
 HDMI-off
 HDMI-on
