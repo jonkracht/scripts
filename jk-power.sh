@@ -1,12 +1,19 @@
 #!/bin/bash
 
-# Standardize dmenu styling with global environment variable $dmenu_flags
+# Check if dmenu_flags is set; if not, set it
+if [[ -v dmenu_flags ]]; then
+echo "dmenu_flags exists."
+else
+echo "dmenu_flags does not exist. setting."
+dmenu_flags="-i -fn RobotoMonoNerdFont-Regular"
+fi
+
 action=$(dmenu $dmenu_flags -p "Power options: "<< EOM
-lockscreen
-reboot
-screensaver
-shutdown
 suspend
+reboot
+shutdown
+lockscreen
+screensaver
 EOM
 )
 
