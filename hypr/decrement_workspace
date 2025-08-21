@@ -4,10 +4,10 @@ ACTIVE_WORKSPACE=$(hyprctl monitors | grep -C 5 "focused: yes" | grep active | a
 PREV_WORKSPACE=$(expr $ACTIVE_WORKSPACE - 1)
 
 if (( $PREV_WORKSPACE == 0 )); then
-	PREV_WORKSPACE==8
+	PREV_WORKSPACE=8
 fi
 
-if (($PREV_WORKSPACE == 9)); then
+if (( $PREV_WORKSPACE == 10 )); then
 	PREV_WORKSPACE=18
 fi
 

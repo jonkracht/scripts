@@ -9,7 +9,7 @@ if (($NEXT_WORKSPACE == 9)); then
 fi
 
 if (($NEXT_WORKSPACE == 19)); then
-	NEXT_WORKSPACE=10 
+	NEXT_WORKSPACE=11 
 fi
 
 hyprctl dispatch workspace $NEXT_WORKSPACE

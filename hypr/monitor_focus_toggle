@@ -1,15 +1,6 @@
 #!/bin/bash
 
-ACTIVE_WORKSPACE=$(hyprctl monitors | grep -C 5 "focused: yes" | grep active | awk '{print $3}')
+NEXT_WORKSPACE=$(hyprctl monitors | grep -C 5 "focused: no" | grep active | awk '{print $3}')
 echo $ACTIVE_WORKSPACE
-
-if (($ACTIVE_WORKSPACE<10)); then
-	NEXT_WORKSPACE=$(expr $ACTIVE_WORKSPACE + 10)
-fi
-
-
-if (($ACTIVE_WORKSPACE>9)); then
-	NEXT_WORKSPACE=$(expr $ACTIVE_WORKSPACE - 10)
-fi
 
 hyprctl dispatch workspace $NEXT_WORKSPACE
