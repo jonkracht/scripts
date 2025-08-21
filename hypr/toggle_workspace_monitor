@@ -1,0 +1,5 @@
+#!/bin/bash
+
+NEW_WORKSPACE=$(hyprctl monitors | grep -C 5 "focused: no" | grep active | awk '{print $3}')
+
+hyprsome move $(NEW_WORKSPACE)
